@@ -1,0 +1,8 @@
+_G.Banned = {"Siter_Man"}
+_G.Reason = "You are Banned!"
+
+game.Players.PlayerAdded:Connect(function(Player)
+	if table.find(_G.Banned, Player.Name) or table.find(_G.Banned, Player.UserId) then
+		Player:Kick(_G.Reason)
+	end
+end)
